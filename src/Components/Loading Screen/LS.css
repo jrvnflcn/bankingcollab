@@ -1,0 +1,50 @@
+.image-container {
+  position: fixed;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  width: 100vh;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 2s ease;
+}
+
+.spinning-image {
+  height: 300px;
+  width: auto;
+  animation: spin 4s linear;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  position: fixed;
+  bottom: -35px;
+
+  font-size: 1.2em;
+  color: #333;
+  animation: fade-blink 2s ease-in-out infinite;
+}
+
+@keyframes fade-blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

@@ -1,4 +1,3 @@
-// SignForm.jsx
 import { useState } from "react";
 import logo from "./assets/Northland Bank Logo-2.png";
 import { useNavigate } from "react-router-dom";

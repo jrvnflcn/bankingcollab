@@ -23,8 +23,9 @@
   background-color: #fff;
   width: 30vw;
   min-width: 400px;
+  min-height: 600px;
   height: 60vh;
-  min-height: auto;
+
   border-radius: 10px;
   box-shadow: 2px 2px 20px rgb(58, 56, 56);
   background-color: snow;
@@ -48,14 +49,16 @@
 }
 
 #login-btn {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   width: 80%;
-  border-radius: 5px;
-  padding: 8px;
-  background-color: #e4832b;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: #D93A2B;
   font-family: GenshinFont;
   border: none;
   box-shadow: 1px 1px 3px black;
+  color:#fff;
 }
 
 #login-btn:hover {
@@ -77,6 +80,8 @@
   border-bottom: 2px solid grey;
   width: 80%;
   margin-bottom: 50px;
+  font-family: GenshinFont;
+  font-size: 20px;
 }
 
 #inputs input:focus {
@@ -92,5 +97,10 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0; 
+}
+
+.error{
+  font-family: GenshinFont;
+  color:red;
 }
 

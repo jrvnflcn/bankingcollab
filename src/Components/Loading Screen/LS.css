@@ -38,6 +38,7 @@
     font-size: 1.2em;
     color: #333;
     animation: fade-blink 2s ease-in-out infinite;
+    font-family: GenshinFont;
 }
 
 

@@ -14,12 +14,11 @@ const LoadingScreen = () => {
   }, []);
 
   return (
-    <div>
-      <div className={`image-container ${fadeOut ? "fade-out" : ""}`}>
+    <div className={`container ${fadeOut ? "fade-out" : ""}`}>
+      <div className="image-container">
         <img src={fatuiLogo} alt="Spinning" className="spinning-image" />
-        <div className="loading-text">Loading...</div>
       </div>
-      
+      <div className="loading-text">Loading...</div>
     </div>
   );
 };

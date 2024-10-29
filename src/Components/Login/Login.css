@@ -1,88 +1,96 @@
 #myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index:1;
-  }
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 1;
+}
 
-  #sign-container{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-  }
+#sign-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  #signform{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    z-index: 3;
-    background-color: #fff;
-    width:30vw;
-    min-width:400px;
-    height: 60vh;
-    min-height:auto;
-    border-radius:10px;
-    box-shadow:2px 2px 20px rgb(58, 56, 56);
-    background-color: snow;
-    overflow:hidden;
-    
-  }
+#signform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  background-color: #fff;
+  width: 30vw;
+  min-width: 400px;
+  height: 60vh;
+  min-height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px rgb(58, 56, 56);
+  background-color: snow;
+  overflow: hidden;
+}
 
-  
+#sign-logo {
+  width: 80%;
+  position: relative;
+  top: -45px;
+}
 
-  #sign-logo{
-    width:90%;
-    position:relative;
-    top:-85px;
+#inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 30%;
+  gap: 5px;
+  width: 100%;
+}
 
-  }
+#login-btn {
+  margin-top: 20px;
+  width: 80%;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #e4832b;
+  font-family: GenshinFont;
+  border: none;
+  box-shadow: 1px 1px 3px black;
+}
 
-  #inputs{
+#login-btn:hover {
+  background-color: #79513a;
+  color: #fff;
+  cursor: pointer;
+}
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content: space-evenly;
-    height:30%;
-    gap:5px;
-    width:100%;
-    
-  }
+#login-btn:focus {
+  border: none;
+}
 
-  #login-btn{
-    margin-top:50px;
-    width: 80%;
-    border-radius: 5px;
-    padding:8px;
-    background-color: #e4832b;
-    font-family:GenshinFont;
-    border:none;
-    box-shadow: 1px 1px 3px black;
-  }
+#login-btn:active {
+  background-color: grey;
+}
 
-  #login-btn:hover{
-    background-color: #79513a;
-    color:#fff;
-    cursor: pointer;
-  }
+#inputs input {
+  border: none;
+  border-bottom: 2px solid grey;
+  width: 80%;
+  margin-bottom: 50px;
+}
 
-  #login-btn:active{
-    background-color: grey;
-  }
+#inputs input:focus {
+  outline: none;
+}
 
-  #inputs input{
-    
-    border:none;
-    border-bottom:2px solid grey;
-    width:80%;
-    margin-bottom:30px;
-  }
+input::placeholder {
+  font-size: 1.2em;
+  font-family: GenshinFont;
+}
 
-  input::placeholder{
-    font-size:1.2em;
-    font-family: GenshinFont;
-  }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; 
+}
+

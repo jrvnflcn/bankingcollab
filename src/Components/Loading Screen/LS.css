@@ -23,7 +23,7 @@
     height: 20vw; 
     max-height: 300px;
     width: auto;
-    animation: spin 4s linear infinite;
+    animation: spin 4s linear;
 }
 
 

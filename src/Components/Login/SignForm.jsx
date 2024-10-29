@@ -1,4 +1,4 @@
-import logo from './assets/Northland Bank Logo.png';
+import logo from './assets/Northland Bank Logo-2.png';
 
 
 const SignForm = () => {

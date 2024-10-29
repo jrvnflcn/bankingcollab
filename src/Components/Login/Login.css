@@ -7,21 +7,82 @@
     z-index:1;
   }
 
-  #signform{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 11;
-    background-color: #fff;
-    width:30vw;
-    height: 60vh;
-
-  }
-
   #sign-container{
     display:flex;
     justify-content:center;
     align-items:center;
     height:100vh;
+  }
+
+  #signform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    z-index: 3;
+    background-color: #fff;
+    width:30vw;
+    min-width:400px;
+    height: 60vh;
+    min-height:auto;
+    border-radius:10px;
+    box-shadow:2px 2px 20px rgb(58, 56, 56);
+    background-color: snow;
+    overflow:hidden;
+    
+  }
+
+  
+
+  #sign-logo{
+    width:90%;
+    position:relative;
+    top:-85px;
+
+  }
+
+  #inputs{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: space-evenly;
+    height:30%;
+    gap:5px;
+    width:100%;
+    
+  }
+
+  #login-btn{
+    margin-top:50px;
+    width: 80%;
+    border-radius: 5px;
+    padding:8px;
+    background-color: #e4832b;
+    font-family:GenshinFont;
+    border:none;
+    box-shadow: 1px 1px 3px black;
+  }
+
+  #login-btn:hover{
+    background-color: #79513a;
+    color:#fff;
+    cursor: pointer;
+  }
+
+  #login-btn:active{
+    background-color: grey;
+  }
+
+  #inputs input{
+    
+    border:none;
+    border-bottom:2px solid grey;
+    width:80%;
+    margin-bottom:30px;
+  }
+
+  input::placeholder{
+    font-size:1.2em;
+    font-family: GenshinFont;
   }

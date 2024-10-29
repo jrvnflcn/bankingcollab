@@ -6,12 +6,16 @@ const SignForm = () => {
     <div id="signform">
       <img src={logo} id="sign-logo"/>
 
-      <label>Employee ID:</label>
-      <input type="number"/>
-      <label>Password:</label>
-      <input type="password"/>
+      <div id="inputs">
+        
+        <input type="number" placeholder="Employee ID"/>
+        
+        <input type="password" placeholder="Password"/>
+        
+        <button id="login-btn">Login</button>
+      </div>
 
-      <button>Login</button>
+      
     </div>
    );
 }

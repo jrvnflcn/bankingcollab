@@ -1,5 +1,11 @@
+@font-face {
+  font-family: GenshinFont;
+  src: url(./Components/Login/assets/zh-cn.ttf);
+}
+
 .App {
   text-align: center;
+  font-family: GenshinFont;
 }
 
 .App-logo {

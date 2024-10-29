@@ -1,65 +1,60 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     position: fixed;
     align-items: center;
     justify-content: center;
-    top:50%;
-    left:50%;
-    background-color: #000;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    width: 100vh;
+    background-color: #fff; /* Full white background */
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
-    transition: opacity 2s ease; 
+    transition: opacity 2s ease;
+    z-index: 10;
 }
 
 .image-container {
-  
-  background-color: #fff;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .spinning-image {
-  height: 300px;
-  width: auto;
-  animation: spin 4s linear;
+    height: 20vw; 
+    max-height: 300px;
+    width: auto;
+    animation: spin 4s linear infinite;
 }
+
 
 .fade-out {
-  opacity: 0;
+    opacity: 0;
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .loading-text {
+    position: absolute;
+    bottom: 30px; 
+    font-size: 1.2em;
+    color: #333;
+    animation: fade-blink 2s ease-in-out infinite;
+}
 
-  display:block;
-  z-index: 10;
-  font-size: 1.2em;
-  color: #333;
-  animation: fade-blink 2s ease-in-out infinite;
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes fade-blink {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
 }

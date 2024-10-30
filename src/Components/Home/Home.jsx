@@ -1,6 +1,7 @@
 import { useAuth } from '../../Authentication/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Nav from '../Nav/Nav'
+import './Home.css'
 
 const Home = () => {
   const { logout } = useAuth();

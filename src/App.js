@@ -11,7 +11,7 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="App">
-          {/* <LoadingScreen /> */}
+          <LoadingScreen />
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/home" element={<ProtectedRoute component={Home} />} />

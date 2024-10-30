@@ -24,7 +24,7 @@ const LoadingScreen = () => {
 
   return (
     <div
-      className={`container ${fadeOut ? "fade-out" : ""}`}
+      className={`LScontainer ${fadeOut ? "fade-out" : ""}`}
       style={{ display: isVisible ? "flex" : "none" }}
     >
       <div className="image-container">

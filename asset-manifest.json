@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cde90da2.css",
+    "main.js": "/static/js/main.5144057c.js",
+    "static/media/Background.mp4": "/static/media/Background.ae650ca9c73c34db1ac8.mp4",
+    "static/media/zh-cn.ttf": "/static/media/zh-cn.54a8212866e6ec1b1003.ttf",
+    "static/media/Fatui_Symbol.png": "/static/media/Fatui_Symbol.2aea30615ed4a16cd751.png",
+    "static/media/Northland Bank Logo-2.png": "/static/media/Northland Bank Logo-2.62d3a613b4fffd074ac0.png",
+    "index.html": "/index.html",
+    "main.cde90da2.css.map": "/static/css/main.cde90da2.css.map",
+    "main.5144057c.js.map": "/static/js/main.5144057c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cde90da2.css",
+    "static/js/main.5144057c.js"
+  ]
+}

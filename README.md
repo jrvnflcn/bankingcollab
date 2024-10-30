@@ -1,3 +1,8 @@
+### Employee Credentials
+
+Employee ID: 10041994 Password: password123
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

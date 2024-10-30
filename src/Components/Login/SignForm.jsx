@@ -41,7 +41,7 @@ const SignForm = ({ onLoginSuccess }) => {
   return (
     <div id="signform">
       <img src={logo} id="sign-logo" alt="Logo" />
-      {error && <div className="error">{error}</div>}
+     
       <form id="inputs" onSubmit={handleLogin}>
         <input
           type="number"
@@ -58,6 +58,7 @@ const SignForm = ({ onLoginSuccess }) => {
           required
         />
         <button id="login-btn" type="submit">Login</button>
+        {error && <div className="error">{error}</div>}
       </form>
     </div>
   );

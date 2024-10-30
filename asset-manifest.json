@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.cde90da2.css",
-    "main.js": "/static/js/main.71d96eb0.js",
-    "static/media/Background.mp4": "/static/media/Background.ae650ca9c73c34db1ac8.mp4",
-    "static/media/zh-cn.ttf": "/static/media/zh-cn.54a8212866e6ec1b1003.ttf",
-    "static/media/Fatui_Symbol.png": "/static/media/Fatui_Symbol.2aea30615ed4a16cd751.png",
-    "static/media/Northland Bank Logo-2.png": "/static/media/Northland Bank Logo-2.62d3a613b4fffd074ac0.png",
-    "index.html": "/index.html",
-    "main.cde90da2.css.map": "/static/css/main.cde90da2.css.map",
-    "main.71d96eb0.js.map": "/static/js/main.71d96eb0.js.map"
+    "main.css": "/bankingcollab/static/css/main.2152dba1.css",
+    "main.js": "/bankingcollab/static/js/main.113e0916.js",
+    "static/media/Background.mp4": "/bankingcollab/static/media/Background.ae650ca9c73c34db1ac8.mp4",
+    "static/media/zh-cn.ttf": "/bankingcollab/static/media/zh-cn.54a8212866e6ec1b1003.ttf",
+    "static/media/Fatui_Symbol.png": "/bankingcollab/static/media/Fatui_Symbol.2aea30615ed4a16cd751.png",
+    "static/media/Northland Bank Logo-2.png": "/bankingcollab/static/media/Northland Bank Logo-2.62d3a613b4fffd074ac0.png",
+    "index.html": "/bankingcollab/index.html",
+    "main.2152dba1.css.map": "/bankingcollab/static/css/main.2152dba1.css.map",
+    "main.113e0916.js.map": "/bankingcollab/static/js/main.113e0916.js.map"
   },
   "entrypoints": [
-    "static/css/main.cde90da2.css",
-    "static/js/main.71d96eb0.js"
+    "static/css/main.2152dba1.css",
+    "static/js/main.113e0916.js"
   ]
 }

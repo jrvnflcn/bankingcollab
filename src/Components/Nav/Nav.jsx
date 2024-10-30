@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useAuth } from '../../Authentication/AuthContext';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import logo from './assets/Northland Bank Logo-2.png';
-import './Nav.css';
+import React, { useState } from "react";
+import { useAuth } from "../../Authentication/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import logo from "./assets/Northland Bank Logo-2.png";
+import "./Nav.css";
 
 const Nav = () => {
   const { logout } = useAuth();
@@ -12,7 +12,7 @@ const Nav = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/');
+    navigate("/");
   };
 
   const toggleMobileMenu = () => {
@@ -25,7 +25,7 @@ const Nav = () => {
       <button id="mobileMenuButton" onClick={toggleMobileMenu}>
         ☰
       </button>
-      <div className={`navLinks ${isMobileMenuOpen ? 'active' : ''}`}>
+      <div className={`navLinks ${isMobileMenuOpen ? "active" : ""}`}>
         <Link to="/home">Home</Link>
         <Link to="/budget">Budget</Link>
         <button onClick={handleLogout}>Logout</button>

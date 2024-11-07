@@ -3,6 +3,7 @@ import logo from "./assets/Northland Bank Logo-2.png";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../Authentication/AuthContext";
 
+
 const SignForm = ({ onLoginSuccess }) => {
   const [employeeId, setEmployeeId] = useState("");
   const [password, setPassword] = useState("");
@@ -14,7 +15,8 @@ const SignForm = ({ onLoginSuccess }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("/database/credentials.json");
+      const response = await fetch(`${process.env.PUBLIC_URL}/database/credentials.json`);
+      console.log(response);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }

@@ -23,4 +23,32 @@
     justify-content: space-between;
     margin-top: 20px;
   }
+
+  button {
+    padding: 10px 15px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #e63946;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"] {
+    background-color: #e63946;
+    color: white;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  button[type="button"] {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #ddd;
+  }
   

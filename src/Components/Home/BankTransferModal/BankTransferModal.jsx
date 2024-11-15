@@ -5,6 +5,7 @@ const BankTransferModal = ({ show, onClose, users }) => {
   const [transactionType, setTransactionType] = useState('Add');
   const [selectedUser, setSelectedUser] = useState('');
   const [amount, setAmount] = useState('');
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (users && users.length > 0) {
@@ -14,10 +15,22 @@ const BankTransferModal = ({ show, onClose, users }) => {
 
   const handleTransfer = () => {
     const user = users.find((user) => user.id === selectedUser);
+    const transferAmount = parseFloat(amount);
+
+    if (!user || isNaN(transferAmount) || transferAmount <= 0) {
+      setError('Please select a valid user and enter a valid amount.');
+      return;
+    }
+
+    if (transactionType === 'Withdraw' && transferAmount > parseFloat(user.balance)) {
+      setError('Insufficient balance for withdrawal.');
+      return;
+    }
+
     const newBalance =
       transactionType === 'Add'
-        ? parseFloat(user.balance) + parseFloat(amount)
-        : parseFloat(user.balance) - parseFloat(amount);
+        ? parseFloat(user.balance) + transferAmount
+        : parseFloat(user.balance) - transferAmount;
 
     const updatedUser = { ...user, balance: newBalance.toString() };
 
@@ -27,23 +40,32 @@ const BankTransferModal = ({ show, onClose, users }) => {
       body: JSON.stringify(updatedUser),
     })
       .then(() => {
-        const newTransaction = {
+        const transaction = {
           user: `${user.fname} ${user.lname}`,
-          action: `${transactionType} Money`,
-          amount: amount,
-          id: Date.now().toString(),
+          action: transactionType === 'Add' ? 'Credit' : 'Debit',
+          credit: transactionType === 'Add' ? transferAmount : null,
+          debit: transactionType === 'Withdraw' ? transferAmount : null,
+          description: transactionType === 'Add'
+            ? `Deposit of $${transferAmount} to account.`
+            : `Withdrawal of $${transferAmount} from account.`,
+          date: new Date().toISOString(),
         };
 
-        fetch('http://localhost:8000/transactions', {
+        return fetch('http://localhost:8000/transactions', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(newTransaction),
-        }).then(() => {
-          console.log('Transaction recorded');
-          onClose();
+          body: JSON.stringify(transaction),
         });
       })
-      .catch((error) => console.error('Error updating balance:', error));
+      .then(() => {
+        console.log('Transaction recorded');
+        setError(null);
+        onClose();
+      })
+      .catch((error) => {
+        console.error('Error updating balance or recording transaction:', error);
+        setError('An error occurred. Please try again.');
+      });
   };
 
   if (!show) return null;
@@ -51,45 +73,45 @@ const BankTransferModal = ({ show, onClose, users }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2>Add/Withdraw Money</h2>
+        <h2>Deposit / Withdraw</h2>
 
-        <label>
-          Transaction Type:
-          <select
-            value={transactionType}
-            onChange={(e) => setTransactionType(e.target.value)}
-          >
-            <option value="Add">Add Money</option>
-            <option value="Withdraw">Withdraw</option>
-          </select>
-        </label>
+        {error && <p className="error">{error}</p>}
 
-        <label>
-          User:
-          <select
-            value={selectedUser}
-            onChange={(e) => setSelectedUser(e.target.value)}
-          >
-            {users.map((user) => (
-              <option key={user.id} value={user.id}>
-                {user.fname} {user.lname}
-              </option>
-            ))}
-          </select>
-        </label>
+        <label>Transaction Type</label>
+        <select
+          value={transactionType}
+          onChange={(e) => setTransactionType(e.target.value)}
+        >
+          <option value="Add">Add Money</option>
+          <option value="Withdraw">Withdraw</option>
+        </select>
 
-        <label>
-          Amount:
-          <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-          />
-        </label>
+        <label>User</label>
+        <select
+          value={selectedUser}
+          onChange={(e) => setSelectedUser(e.target.value)}
+        >
+          {users.map((user) => (
+            <option key={user.id} value={user.id}>
+              {user.fname} {user.lname}
+            </option>
+          ))}
+        </select>
+
+        <label>Amount</label>
+        <input
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="Enter amount"
+          min="0"
+          required
+        />
 
         <div className="modal-actions">
+        <button onClick={onClose}>Cancel</button>
           <button onClick={handleTransfer}>Submit</button>
-          <button onClick={onClose}>Cancel</button>
+          
         </div>
       </div>
     </div>

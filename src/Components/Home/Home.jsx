@@ -44,21 +44,24 @@ const Home = () => {
 
       <div className="dashboard">
         <div className="balance-card box">
+          <div className="pt-2">Total Amount</div>
           <div className="balance-amount">${totalBalance.toFixed(2)}</div>
         </div>
 
         <div className="actions">
+        <div className="action-button box" onClick={() => setShowUserListModal(true)}>
+            User List
+          </div>
+         
+         
+          <div className="action-button box" onClick={() => setShowMoneyTransferModal(true)}>
+            Fund Transfer
+          </div>
           <div className="action-button box" onClick={() => setShowAddUserModal(true)}>
             Add User
           </div>
-          <div className="action-button box" onClick={() => setShowUserListModal(true)}>
-            User List
-          </div>
-          <div className="action-button box" onClick={() => setShowMoneyTransferModal(true)}>
-            Money Transfer
-          </div>
           <div className="action-button box" onClick={() => setShowBankTransferModal(true)}>
-            Add Money/Withdraw
+            Deposit / Withdraw
           </div>
         </div>
 

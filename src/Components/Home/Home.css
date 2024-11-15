@@ -36,13 +36,7 @@
     font-weight: bold;
   }
   
-  .card-number,
-  .card-expiry,
-  .card-type {
-    color: #666666;
-    margin-top: 0.5rem;
-  }
-  
+
   .actions {
     grid-area: actions;
     display: grid;
@@ -69,3 +63,5 @@
     width: 100%;
     margin-top: 1rem;
   }
+
+  

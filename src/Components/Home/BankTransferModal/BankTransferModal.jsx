@@ -51,7 +51,7 @@ const BankTransferModal = ({ show, onClose, users }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2>Bank Transfer</h2>
+        <h2>Add/Withdraw Money</h2>
 
         <label>
           Transaction Type:

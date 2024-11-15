@@ -96,7 +96,7 @@ const EditBudget = ({editExpenses, budget, expenses, setBudget, setTransactions}
       <i onClick={handleEdit} className="fa-solid fa-square-check"></i>
       </div>
 
-      <dialog ref={newRef}>
+      <dialog ref={newRef} className="budgetDialog">
         <input type="text" placeholder="new expense" onChange={e=>setNewExpense(e.target.value)} required></input>
         <input type="number" placeholder="amount" onChange={e=>setNewExpenseAmount(e.target.value)} required></input>
         <button onClick={handleAdd}>Add</button>

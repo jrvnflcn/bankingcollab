@@ -73,7 +73,7 @@ const getDate = ()=>{
       <div className="budgetHead">
       <div>Initial Budget</div><div className="right-align">${budget}</div>
       </div>
-      {expenses && expenses.map(expense=>(<div key={expense.name} className="expenses">
+      {expenses && expenses.map((expense, index)=>(<div key={expense.name} className="expenses" style={{animationDelay: `${index*.2+.2}s`}}>
         
         <div><i className="fa-solid fa-trash" onClick={()=>deleteExpense(expense.name)}></i>{expense.name}</div><div className="right-align">{expense.amount}</div>
         </div>))}

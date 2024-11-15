@@ -1,3 +1,5 @@
+
+
 .budgetPage{
   display: grid;
   grid-template-columns: .8fr 2fr 1fr;
@@ -15,11 +17,15 @@
   margin-top:5px;
   text-align: left;
 
+  
+}
+
+.budgetHead, .expenses{
+
   animation-name:buda;
   animation-duration: 1s;
   animation-iteration-count: 1;
- 
-
+  animation-fill-mode: backwards;
 }
 
 @keyframes buda {
@@ -69,12 +75,13 @@
   border: none;
   text-align: right;
   width: 70%;
+  padding:0;
 }
 
 .inputContainer{
   display:flex;
   flex-wrap: nowrap;
-  align-items: center;
+
 }
 
 .fa-square-check{
@@ -105,40 +112,74 @@
   background-color: maroon;
 }
 
-.budgetEditing form dialog{
-  position:fixed;
-  left:50%;
-  top:50%;
-  transform: translate(-50%, -50%);
+.budgetDialog{
+  background-color: #D93A2B;
   border-radius: 10px;
-  background-color:rgba(143,44,42,.3) ;
   border: none;
   height:150px;
   box-shadow: 1px 1px 6px black;
   width:250px;
   text-align: center;
   padding-top: 20px;
+  overflow: hidden;
+
+  animation:dialoge .2s linear 0s 1;
+  animation-fill-mode: forwards;
 }
 
-.budgetEditing form dialog input{
-  margin:4px;
+@keyframes dialoge {
+
+  from{
+    transform: scale(.2);
+  }
+  to{
+    transform: scale(1.2);
+  }
+  
 }
-.budgetEditing form dialog i{
+
+.budgetDialog input{
+  margin:4px;
+  background-color: white !important;
+  color:black !important;
+}
+
+.budgetDialog button{
+  background-color: black;
+  height: 20%;
+  margin-top:30px;
+  padding: 0;
+  display: block;
+  margin-inline:auto;
+  width: 50px;
+  
+}
+
+.budgetDialog button:hover{
+  background-color:aquamarine !important;
+}
+.budgetDialog i{
   position:absolute;
   right:2%;
   top:2%;
 }
 
-.barChart{
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
+.budgetDialog i:hover{
+  transform: scale(1.3);
 }
+
+
 
 .transactComponent{
   width:70%;
   margin-inline:auto;
-  
+  background-color: rgba(217, 58, 43, .7);
+  border-radius: 20px;
+  box-shadow: 4px 3px 4px 1px black;
+}
+
+h2{
+  text-shadow: 1px 1px 1px aquamarine;
 }
 
 .budgetTransacts, .transactHeaders{
@@ -148,5 +189,7 @@
 }
 
 .budgetTransacts div, .transactHeaders div{
-  border:1px solid black;
+  border:1px solid floralwhite;
+  border-bottom:none;
+  border-right:none;
 }

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../Authentication/AuthContext";
 import { useNavigate } from "react-router-dom";
-import Nav from "../Nav/Nav";
 import AddUserModal from "./AddUserModal/AddUserModal";
 import UserListModal from "./UserListModal/UserListModal";
 import MoneyTransferModal from "./MoneyTransferModal/MoneyTransferModal";
@@ -38,7 +37,7 @@ const Home = () => {
 
   return (
     <div className="container-fluid container-xxl">
-      <Nav />
+
       <h1 className="display-5 d-flex align-start ms-5 mt-3" id="welcome">
         Welcome User
       </h1>

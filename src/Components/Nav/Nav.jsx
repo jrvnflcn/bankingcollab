@@ -27,7 +27,7 @@ const Nav = () => {
       </button>
       <div className={`navLinks ${isMobileMenuOpen ? "active" : ""}`}>
         <Link to="/home">Home</Link>
-        <Link to="/budget">Budget</Link>
+        <Link to="/home/budget">Budget</Link>
         <button onClick={handleLogout}>Logout</button>
       </div>
     </nav>

@@ -1,0 +1,31 @@
+
+{
+  "budget":10000,
+  "expenses": [{
+    "name": "Variable Expense",
+    "amount":1000
+  },
+  {
+    "name":"Fixed Expense",
+    "amount":2000
+  },
+  {
+    "name":"Electricity Expense",
+    "amount":200
+  },
+  {
+    "name":"Water Expense",
+    "amount":100
+  },
+  {
+    "name":"Food Expemse",
+    "amount":4000
+  },
+  {
+    "name":"Transportation Expense",
+    "amount":1000
+  }
+]
+   
+  
+}

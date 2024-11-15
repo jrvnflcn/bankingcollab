@@ -1,0 +1,152 @@
+.budgetPage{
+  display: grid;
+  grid-template-columns: .8fr 2fr 1fr;
+  gap:15px;
+  padding: 5% 10%;
+}
+
+
+
+
+.budgetHead, .expenses, .budgetTotal{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  white-space: nowrap;
+  margin-top:5px;
+  text-align: left;
+
+  animation-name:buda;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+ 
+
+}
+
+@keyframes buda {
+  from{
+    transform: translateY(-200%);
+    opacity: 0%;
+  }
+  to{
+    transform: translateY(0%);
+    opacity: 100%;
+  }
+  
+}
+
+.right-align{
+  text-align: right;
+}
+
+
+.budgetTotal{
+  border-top:2px solid #D93A2B;
+  font-weight: bolder;
+}
+
+.budgetHead{
+  font-weight: bold;
+}
+
+.budgetContainer{
+  border-right: 4px solid #D93A2B;
+  padding-right:10px;
+  margin-inline: 10%;
+}
+
+.budgetEditing form{
+  display:flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.budgetEditing form input, .budgetEditing form select{
+  border-radius: 5px;
+  background-color: #D93A2B;
+  box-shadow: 1px 1px 4px black;
+  color: white;
+  height:25px;
+  border: none;
+  text-align: right;
+  width: 70%;
+}
+
+.inputContainer{
+  display:flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.fa-square-check{
+  font-size: 1.5em;
+  margin-left: 5px;
+ 
+}
+
+.fa-square-check:hover{
+  color:aquamarine;
+  transform: scale(1.2);
+}
+
+.fa-trash{
+  color:#D93A2B;
+  margin-left:-12px;
+  margin-right:2px;
+}
+
+.fa-trash:hover{
+  transform: scale(1.2);
+}
+
+.budgetEditing form button:hover{
+  background-color: floralwhite;
+}
+.budgetEditing form button:active{
+  background-color: maroon;
+}
+
+.budgetEditing form dialog{
+  position:fixed;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background-color:rgba(143,44,42,.3) ;
+  border: none;
+  height:150px;
+  box-shadow: 1px 1px 6px black;
+  width:250px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.budgetEditing form dialog input{
+  margin:4px;
+}
+.budgetEditing form dialog i{
+  position:absolute;
+  right:2%;
+  top:2%;
+}
+
+.barChart{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.transactComponent{
+  width:70%;
+  margin-inline:auto;
+  
+}
+
+.budgetTransacts, .transactHeaders{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  
+}
+
+.budgetTransacts div, .transactHeaders div{
+  border:1px solid black;
+}

@@ -29,7 +29,7 @@ const AddUserModal = ({ show, onClose, onSave }) => {
           action: "Initial Deposit",
           user: `${fname} ${lname}`, 
           accountType: account,
-          amount: parseFloat(balance),
+          credit: parseFloat(balance),
           description: `Initial deposit for ${fname} ${lname}`,
           date: new Date().toISOString(),
         };
@@ -44,7 +44,7 @@ const AddUserModal = ({ show, onClose, onSave }) => {
         console.log("Transaction recorded");
         setIsPending(false);
         onClose();
-        navigate("/home");
+        
       })
       .catch((error) => {
         console.error("Error adding user or recording transaction:", error);
@@ -58,12 +58,13 @@ const AddUserModal = ({ show, onClose, onSave }) => {
     <div className="modal-overlay">
       <div className="modal-content">
         <h2>Add New User</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="mb-2">
           <label>First Name:</label>
           <input
             type="text"
             value={fname}
             onChange={(e) => setFname(e.target.value)}
+            required
           />
 
           <label>Last Name:</label>
@@ -71,6 +72,7 @@ const AddUserModal = ({ show, onClose, onSave }) => {
             type="text"
             value={lname}
             onChange={(e) => setLname(e.target.value)}
+            required
           />
 
           <label>Account Type:</label>
@@ -89,15 +91,17 @@ const AddUserModal = ({ show, onClose, onSave }) => {
             type="number"
             value={balance}
             onChange={(e) => setBalance(e.target.value)}
+            required
           />
 
           <div className="modal-actions">
+          <button type="button" onClick={onClose}>
+              Cancel
+            </button>
             <button type="submit" disabled={isPending}>
               {isPending ? "Saving..." : "Save"}
             </button>
-            <button type="button" onClick={onClose}>
-              Cancel
-            </button>
+           
           </div>
         </form>
       </div>

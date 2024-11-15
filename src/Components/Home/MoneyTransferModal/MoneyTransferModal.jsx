@@ -21,40 +21,56 @@ const MoneyTransferModal = ({ show, onClose, users }) => {
       fetch(`http://localhost:8000/users/${senderId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ balance: parseFloat(sender.balance) - transferAmount })
+        body: JSON.stringify({ balance: parseFloat(sender.balance) - transferAmount }),
       });
   
       fetch(`http://localhost:8000/users/${recipientId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ balance: parseFloat(recipient.balance) + transferAmount })
+        body: JSON.stringify({ balance: parseFloat(recipient.balance) + transferAmount }),
       });
   
-      const transaction = {
+      const debitTransaction = {
         user: `${sender.fname} ${sender.lname}`,
-        action: 'Money Transfer',
-        amount: transferAmount,
-        id: Date.now().toString() 
+        action: 'Debit',
+        credit: null, 
+        debit: transferAmount,
+        description: `Transfer to ${recipient.fname} ${recipient.lname}`,
+        date: new Date().toISOString(),
       };
       fetch('http://localhost:8000/transactions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(transaction)
+        body: JSON.stringify(debitTransaction),
+      });
+  
+      const creditTransaction = {
+        user: `${recipient.fname} ${recipient.lname}`,
+        action: 'Credit',
+        credit: transferAmount,
+        debit: null, 
+        description: `Transfer from ${sender.fname} ${sender.lname}`,
+        date: new Date().toISOString(),
+      };
+      fetch('http://localhost:8000/transactions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(creditTransaction),
       });
   
       setError(null);
-      onClose(); 
+      onClose();
     } else {
       setError("Insufficient balance or invalid transfer details.");
     }
   };
-
+  
   if (!show) return null;
 
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2>Money Transfer</h2>
+        <h2>Fund Transfer</h2>
         
         <label>
           Sender:
@@ -93,8 +109,9 @@ const MoneyTransferModal = ({ show, onClose, users }) => {
         {error && <p className="error">{error}</p>}
 
         <div className="modal-actions">
+        <button onClick={onClose}>Cancel</button>
           <button onClick={handleTransfer}>Transfer</button>
-          <button onClick={onClose}>Cancel</button>
+         
         </div>
       </div>
     </div>

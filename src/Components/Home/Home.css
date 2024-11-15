@@ -1,0 +1,71 @@
+.container-fluid {
+    padding: 2rem;
+  }
+  
+  #welcome {
+    font-weight: bold;
+  }
+  
+  .dashboard {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+      "balance-card actions actions"
+      "transactions transactions transactions";
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 1rem;
+  }
+  
+
+  .box {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .balance-card {
+    grid-area: balance-card;
+    text-align: center;
+  }
+  
+  .balance-amount {
+    font-size: 2.5rem;
+    color: #e63946;
+    font-weight: bold;
+  }
+  
+  .card-number,
+  .card-expiry,
+  .card-type {
+    color: #666666;
+    margin-top: 0.5rem;
+  }
+  
+  .actions {
+    grid-area: actions;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .action-button {
+    text-align: center;
+    background-color: #e63946;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+
+.transactions {
+    grid-area: transactions;
+  }
+  
+  .transactions table {
+    width: 100%;
+    margin-top: 1rem;
+  }

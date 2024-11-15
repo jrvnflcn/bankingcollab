@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/bankingcollab/static/css/main.d79889dd.css",
-    "main.js": "/bankingcollab/static/js/main.dcf9a42a.js",
+    "main.css": "/bankingcollab/static/css/main.798abd6c.css",
+    "main.js": "/bankingcollab/static/js/main.5c72924d.js",
     "static/media/Background.mp4": "/bankingcollab/static/media/Background.ae650ca9c73c34db1ac8.mp4",
     "static/media/zh-cn.ttf": "/bankingcollab/static/media/zh-cn.54a8212866e6ec1b1003.ttf",
     "static/media/Fatui_Symbol.png": "/bankingcollab/static/media/Fatui_Symbol.2aea30615ed4a16cd751.png",
     "static/media/Northland Bank Logo-2.png": "/bankingcollab/static/media/Northland Bank Logo-2.62d3a613b4fffd074ac0.png",
     "index.html": "/bankingcollab/index.html",
-    "main.d79889dd.css.map": "/bankingcollab/static/css/main.d79889dd.css.map",
-    "main.dcf9a42a.js.map": "/bankingcollab/static/js/main.dcf9a42a.js.map"
+    "main.798abd6c.css.map": "/bankingcollab/static/css/main.798abd6c.css.map",
+    "main.5c72924d.js.map": "/bankingcollab/static/js/main.5c72924d.js.map"
   },
   "entrypoints": [
-    "static/css/main.d79889dd.css",
-    "static/js/main.dcf9a42a.js"
+    "static/css/main.798abd6c.css",
+    "static/js/main.5c72924d.js"
   ]
 }

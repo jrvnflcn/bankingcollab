@@ -1,3 +1,7 @@
+# IMPORTANT
+
+please run "npx json-server --watch public/database/userdata.json --port 8000" before trying the app. Thank you.
+
 ### Employee Credentials
 
 Employee ID: 10041994 Password: password123

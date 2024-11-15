@@ -1,6 +1,6 @@
 # IMPORTANT
 
-please run "npx json-server --watch public/database/userdata.json --port 8000" before trying the app. Thank you.
+please run "npx json-server --watch public/database/userdata.json --port 8000" before trying the app.
 
 ### Employee Credentials
 

@@ -68,7 +68,7 @@ const Home = () => {
         {isTransactionsPending && <p>Loading transactions...</p>}
         {transactionsError && <p>{transactionsError}</p>}
         
-        <Transactions transactions={transactions} />
+        <Transactions users={users} transactions={transactions} />
 
         <AddUserModal show={showAddUserModal} onClose={() => setShowAddUserModal(false)} />
         <UserListModal users={users} show={showUserListModal} onClose={() => setShowUserListModal(false)} />

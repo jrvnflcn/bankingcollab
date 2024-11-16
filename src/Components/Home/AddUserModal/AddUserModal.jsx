@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import "./AddUserModal.css";
 import { useNavigate } from "react-router-dom";
 
+
+const generateUserId = () => {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let userId = '';
+  for (let i = 0; i < 10; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    userId += characters.charAt(randomIndex);
+  }
+  return userId;
+};
+
 const AddUserModal = ({ show, onClose, onSave }) => {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -14,7 +25,14 @@ const AddUserModal = ({ show, onClose, onSave }) => {
     e.preventDefault();
     console.log("Form submitted");
 
-    const user = { fname, lname, account, balance: parseFloat(balance) };
+    const userId = generateUserId(); 
+    const user = { 
+      id: userId,
+      fname, 
+      lname, 
+      account, 
+      balance: parseFloat(balance) 
+    };
 
     setIsPending(true);
     fetch("http://localhost:8000/users", {
@@ -44,7 +62,6 @@ const AddUserModal = ({ show, onClose, onSave }) => {
         console.log("Transaction recorded");
         setIsPending(false);
         onClose();
-        
       })
       .catch((error) => {
         console.error("Error adding user or recording transaction:", error);
@@ -95,13 +112,12 @@ const AddUserModal = ({ show, onClose, onSave }) => {
           />
 
           <div className="modal-actions">
-          <button type="button" onClick={onClose}>
+            <button type="button" onClick={onClose}>
               Cancel
             </button>
             <button type="submit" disabled={isPending}>
               {isPending ? "Saving..." : "Save"}
             </button>
-           
           </div>
         </form>
       </div>

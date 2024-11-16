@@ -61,6 +61,7 @@ const UserListModal = ({ show, onClose, users, onUsersChange }) => {
               <thead>
                 <tr>
                   <th>Select</th>
+                  <th>Account ID</th>
                   <th>First Name</th>
                   <th>Last Name</th>
                   <th>Account</th>
@@ -77,6 +78,7 @@ const UserListModal = ({ show, onClose, users, onUsersChange }) => {
                         onChange={() => handleCheckboxChange(user.id)}
                       />
                     </td>
+                    <td>{user.id}</td>
                     <td>{user.fname}</td>
                     <td>{user.lname}</td>
                     <td>{user.account}</td>

@@ -1,8 +1,22 @@
 {
   "users": [
-   
+    {
+      "id": "Qe8LFIQAph",
+      "fname": "Narra",
+      "lname": "Lao",
+      "account": "Savings",
+      "balance": 10000
+    }
   ],
   "transactions": [
-   
+    {
+      "id": "c249",
+      "action": "Initial Deposit",
+      "user": "Narra Lao",
+      "accountType": "Savings",
+      "credit": 10000,
+      "description": "Initial deposit for Narra Lao",
+      "date": "2024-11-16T00:34:51.330Z"
+    }
   ]
 }

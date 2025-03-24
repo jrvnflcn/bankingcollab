@@ -5,7 +5,14 @@
       "fname": "Narra",
       "lname": "Lao",
       "account": "Savings",
-      "balance": 10000
+      "balance": "5400"
+    },
+    {
+      "id": "Zcpc5xLGfy",
+      "fname": "Jino",
+      "lname": "Dayrit",
+      "account": "Savings",
+      "balance": 24400
     }
   ],
   "transactions": [
@@ -17,6 +24,42 @@
       "credit": 10000,
       "description": "Initial deposit for Narra Lao",
       "date": "2024-11-16T00:34:51.330Z"
+    },
+    {
+      "id": "f4ae",
+      "action": "Initial Deposit",
+      "user": "Jino Dayrit",
+      "accountType": "Savings",
+      "credit": 20000,
+      "description": "Initial deposit for Jino Dayrit",
+      "date": "2024-11-27T03:24:29.521Z"
+    },
+    {
+      "id": "0a86",
+      "user": "Narra Lao",
+      "action": "Debit",
+      "credit": null,
+      "debit": 4400,
+      "description": "Transfer to Jino Dayrit",
+      "date": "2024-11-27T03:35:08.055Z"
+    },
+    {
+      "id": "8112",
+      "user": "Jino Dayrit",
+      "action": "Credit",
+      "credit": 4400,
+      "debit": null,
+      "description": "Transfer from Narra Lao",
+      "date": "2024-11-27T03:35:08.055Z"
+    },
+    {
+      "id": "3bd1",
+      "user": "Narra Lao",
+      "action": "Debit",
+      "credit": null,
+      "debit": 200,
+      "description": "Withdrawal of $200 from account.",
+      "date": "2024-11-27T03:35:59.448Z"
     }
   ]
 }

@@ -31,3 +31,23 @@ const Transactions = ({ transactions, users }) => {
 };
 
 export default Transactions;
+
+const creditTransaction = {
+  user: `${recipient.fname} ${recipient.lname}`,
+  action: 'Credit',
+  credit: transferAmount,
+  debit: null,
+  description :`Transfer from ${sender.fname} ${sender.lname}`,
+  date: new Date().toISOString(),
+};
+
+fetch('http://localhost:8000/transactions', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(creditTransaction),
+};)
+
+  setError (null);
+  onclose();
+} else {
+  setError ("Insufficient balance or invalid transfer details.)

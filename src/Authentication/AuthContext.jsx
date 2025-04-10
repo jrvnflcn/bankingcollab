@@ -18,6 +18,11 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem('isAuthenticated', 'false');
   };
 
+  const requireLogin = () => {
+    setIsAuthenticated(true);
+    localStorage.setItem('isAuthenticated', 'true');
+  };
+
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
       {children}

@@ -1,7 +1,7 @@
 import "./Login.css";
 import background from "./assets/Background.mp4";
 import SignForm from "./SignForm";
-import { useAuth } from "../../Authentication/AuthContext"; // Import the Auth context
+import { useAuth } from "../../Authentication/AuthContext"; 
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -14,7 +14,7 @@ const Login = () => {
     setFadeOut(true);
     setTimeout(() => {
       navigate("/home");
-    }, 1000);
+    }, 500);
   };
 
   return (
